@@ -13,3 +13,11 @@ make SKIP_GIT=yes keyball/keyball39:universal
 ```
 
 This is a compile target only. Flashing either Pro Micro requires a separate user-approved step.
+
+## Remap viewing
+
+VIA is enabled so Remap can display this keymap using the Keyball39 layout definition. Treat `keymap.c` as the source of truth and use Remap for viewing or printing only; edits made in Remap are stored in EEPROM and are not recorded in Git.
+
+VIA copies the compiled default keymap into EEPROM on first initialization. After changing `keymap.c`, clear EEPROM on both Pro Micros so the new compiled layout is loaded. Clearing EEPROM can also reset other saved Keyball settings.
+
+RGB underglow is disabled to leave enough flash space for VIA on the ATmega32U4 Pro Micro.
